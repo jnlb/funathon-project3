@@ -135,6 +135,7 @@ stats_tile["share_pct"] = (__ / total_km2 * 100).round(2)  # TODO: column to nor
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 from great_tables import GT, style, loc
 
 stats_tile = (
@@ -263,6 +264,7 @@ summary_df = pd.DataFrame({
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 import pandas as pd
 
 sealed_km2 = stats_tile.loc[stats_tile["label"] == 1,             "total_area_km2"].sum()
@@ -349,6 +351,7 @@ plt.show()
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -487,6 +490,7 @@ comparison = pd.concat([__, __], axis=1).fillna(0).reset_index()  # TODO: tile_s
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 stats_nuts = (
     gdf_nuts.groupby(["label", "class_name"])
     .agg(
@@ -615,6 +619,7 @@ plt.show()
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
 stats_nuts.set_index("class_name")["total_area_km2"].sort_values().plot(
@@ -780,6 +785,7 @@ plt.show()
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 image_filepath_2021 = (
     "projet-funathon/"
     "2026/project3/data/images/LU000/2021/"
@@ -1014,6 +1020,7 @@ plt.show()
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 response_nuts_2021 = requests.get(
     f"{api_url}/predict_nuts",
     params={"nuts_id": "LU000", "year": 2021},
@@ -1269,6 +1276,7 @@ m
 ```{python}
 #| eval: true
 #| echo: true
+#| include: false
 import folium
 from folium.plugins import HeatMap
 
