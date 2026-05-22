@@ -133,7 +133,7 @@ stored at:
 
 ```
 https://minio.lab.sspcloud.fr/projet-funathon/mlflow-artifacts/
-1/a2cc538d334b474389efcc54115ef13d/artifacts/
+1/88138b467a484c54b9935b66460413cd/artifacts/
 ```
 
 Two artifacts are needed:
@@ -161,7 +161,7 @@ locally, along with all the hyperparameters needed to run inference.
 2. Download the `model/` directory recursively to a local temp folder
 3. Load the model with `mlflow.pyfunc.load_model()`
 4. Enter https://datalab.sspcloud.fr/file-explorer/projet-funathon/mlflow-artifacts/
-1/a2cc538d334b474389efcc54115ef13d/artifacts/ in your web search bar and look at the files in it.
+1/88138b467a484c54b9935b66460413cd/artifacts/ in your web search bar and look at the files in it.
 Find the file containing all theses parameters `n_bands`, `tiles_size`, `augment_size`,
 `module_name`, `normalization_mean`, `normalization_std` and load it.
 :::
@@ -211,7 +211,7 @@ print(f"std={normalization_std}")
 - Pass `anon=True` to `s3fs.S3FileSystem()` for anonymous public access.
 - The MinIO endpoint URL is `"https://minio.lab.sspcloud.fr"`.
 - The S3 path does **not** include `s3://` — just the bucket and key:
-  `"projet-funathon/mlflow-artifacts/1/<run_id>/artifacts/model"`.
+  `"projet-funathon/mlflow-artifacts/<id>/<run_id>/artifacts/model"`.
 - `fs.get(src, dst, recursive=True)` downloads the full directory tree.
 - `mlflow.pyfunc.load_model()` accepts a local directory path as a string.
 - The `params.json` URL follows the same structure as the model URL,
@@ -236,7 +236,7 @@ fs = s3fs.S3FileSystem(
     endpoint_url="https://minio.lab.sspcloud.fr",
 )
 
-s3_run_path = "projet-funathon/mlflow-artifacts/1/a2cc538d334b474389efcc54115ef13d/artifacts/"
+s3_run_path = "projet-funathon/mlflow-artifacts/1/88138b467a484c54b9935b66460413cd/artifacts/"
 
 s3_model_path = s3_run_path + "model"
 local_model_dir = Path(tempfile.mkdtemp()) / "model"
