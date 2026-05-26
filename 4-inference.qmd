@@ -1705,8 +1705,6 @@ folium.LayerControl(collapsed=False).add_to(m_nuts)
 m_nuts.save("map_nuts.html")
 ```
 
-The predicted polygons are approximated to 50m to avoid overloading the website.
-
 ```{python}
 #| eval: true
 #| echo: false
