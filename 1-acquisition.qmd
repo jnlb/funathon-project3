@@ -696,35 +696,37 @@ The HTTPS URLs work from anywhere without credentials — great for reading indi
 ::: {.callout-important}
 **Available regions.** Not all NUTS3 regions have pre-processed tiles. The following **27 regions** are covered:
 
-| NUTS3 Code | Region | Country |
-|---|---|---|
-| AT130 | Wien (Vienna) | Austria |
-| BE100 | Bruxelles-Capitale (Brussels) | Belgium |
-| BG411 | Sofia (Capital) | Bulgaria |
-| CZ010 | Praha (Prague) | Czechia |
-| DE300 | Berlin | Germany |
-| DEA23 | Köln (Cologne) | Germany |
-| DK011 | Byen København (Copenhagen) | Denmark |
-| EE001 | Põhja-Eesti (Northern Estonia / Tallinn) | Estonia |
-| EL303 | Kentrikos Tomeas Athinon (Central Athens) | Greece |
-| ES300 | Comunidad de Madrid | Spain |
-| FI1B1 | Helsinki-Uusimaa | Finland |
-| FR101 | Paris | France |
-| FRJ27 | Tarn (Albi) | France |
-| HRO41 | Grad Zagreb (City of Zagreb) | Croatia |
-| HU110 | Budapest | Hungary |
-| ITI43 | Roma (Rome) | Italy |
-| LT011 | Vilniaus apskritis (Vilnius) | Lithuania |
-| LU000 | Luxembourg | Luxembourg |
-| LV006 | Rīga | Latvia |
-| MT001 | Malta | Malta |
-| NL329 | Groot-Amsterdam (Amsterdam area) | Netherlands |
-| PL127 | Miasto Warszawa (Warsaw) | Poland |
-| PT170 | Área Metropolitana de Lisboa (Lisbon) | Portugal |
-| RO321 | București (Bucharest) | Romania |
-| SE110 | Stockholms län (Stockholm) | Sweden |
-| SI041 | Osrednjeslovenska (Ljubljana area) | Slovenia |
-| SK010 | Bratislavský kraj (Bratislava) | Slovakia |
+| NUTS3 Code | Country |
+|---|---|
+| AT332 | Austria |
+| BE100 | Belgium |
+| BG332 | Bulgaria |
+| CY000 | Cyprus |
+| CZ072 | Czechia |
+| DEA54 | Germany |
+| DK041 | Denmark |
+| EE00A | Estonia |
+| EL521 | Greece |
+| ES612 | Spain |
+| FI1C1 | Finland |
+| FRJ27 | France |
+| FRK26 | France |
+| HR050 | Croatia |
+| IE061 | Irland |
+| ITI32 | Italy |
+| LT028 | Lithuania |
+| LU000 | Luxembourg |
+| LV008 | Latvia |
+| MT001 | Malta |
+| NL33C | Netherlands |
+| PL414 | Poland |
+| PT16I | Portugal |
+| RO123 | Romania |
+| SE311 | Sweden |
+| SI035 | Slovenia |
+| SK022 | Slovakia |
+| UKJ22 | United Kingdom |
+| UKRAINE | Ukraine |
 
 ::: {.callout-note}
 **Scale of the dataset and class imbalance.** Across the 27 pre-processed NUTS3 regions and the available years (2021 and 2024), the dataset contains roughly **15 000–20 000 `(image, label)` patches** — a comfortable size for training a segmentation model on a single GPU. Because these regions are built around European capital cities, the 10 CLC+ classes are *not* evenly represented: *sealed surfaces*, *permanent herbaceous* and *periodically herbaceous* dominate, while *lichens and mosses* or *broadleaved evergreen trees* are rare or completely absent in most tiles. This **class imbalance** is a first-order concern when training a segmentation model — naive training will optimise for the common classes and ignore the rare ones.
