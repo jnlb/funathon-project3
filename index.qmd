@@ -108,7 +108,7 @@ Structure of the project:
 
 - The `.qmd` files and the `_quarto.yaml` file are necessary to build the website;
 - The file `pyproject.toml` describes the dependencies of the project;
-- Final solutions are available in the `final_solution/` folder.
+- Final solutions are available in each `.qmd`.
 
 
 
@@ -117,7 +117,7 @@ Structure of the project:
 Install the project dependencies by running the following command in the terminal:
 
 ```
-source ./init.sh
+uv sync
 ```
 
 ## Select the Python interpreter
